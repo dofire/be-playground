@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: producer
+
+  threads:
+    virtual:
+      enabled: true
+
+  kafka:
+    bootstrap-servers: kafka:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      bootstrap-servers: kafka:9092
+
+server:
+  port: 8082

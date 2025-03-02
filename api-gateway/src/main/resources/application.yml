@@ -1,0 +1,22 @@
+# spring config
+spring:
+
+  application:
+    name: ap-gateway
+
+  cloud:
+    gateway:
+      routes:
+        - id: event-producer
+          uri: http://event-producer:8081
+          predicates:
+            - Path=/api/events/**
+
+        - id: event-consumer
+          uri: http://event-consumer:8082
+          predicates:
+            - Path=/api/events/**
+
+# server port
+server:
+  port: 8080
